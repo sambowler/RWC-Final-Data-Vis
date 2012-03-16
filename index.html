@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Twitter Analysis&mdash;The Rugby World Cup Final 2011</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="http://livejs.com/live.js"></script>
+    </head>
+    <div id="top"></div>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#sentiment-graph">Opinion</a></li>
+                    <li><a href="#players">Players</a></li>
+                    <li><a href="#word-analysis">Words</a></li>
+                </ul>
+                <a id="back-to-top" href="#top">Back to top</a>
+            </nav>
+        </header>
+
+        <p id="about">A series of data visualizations exploring the opinion of tweeters during the Rugby World Cup final 2011</p>
+
+        <div id="loading-indicator">
+            <span>Loading</span>
+            <span id="loading-perc"></span>
+        </div>
+
+        <section id="sentiment-graph">
+            <h2>Opinion</h2>
+            <div class="introduction">
+                <p>This graph shows how the sentiment of tweets towards each team varied during the match.</p>
+                <ul>
+                    <li>Click on a minute to see more information</li>
+                    <li>Bars are sized on the number of tweets recorded during that minute</li>
+                    <li>The colour or split of the bar (depending on view type) represents the percentage of tweets sent during the minute that were positive</li>
+                </ul>
+            </div>
+
+            <hr />
+
+            <div id="graph-options">
+                <label for="graph-type">Graph type:</label>&nbsp;
+                <select id="graph-type">
+                    <option value="stacked" selected>Stacked</option>
+                    <option value="heat">Heat</option>
+                </select>
+            </div>
+
+            <div id="sentiment-key">Key: </div>
+
+            <div id="graph">
+                <div id="team-info-container">
+                    <div class="nz">
+                        <img src="images/nz-logo.jpg" alt="New Zealand Logo" />
+                    </div>
+                    <div class="fra">
+                        <img src="images/fra-logo.jpg" alt="France Logo" />
+                    </div>
+                </div>
+            </div>
+
+            <aside id="minute-info">
+                <div class="nz"></div>
+                <div class="middle"></div>
+                <div class="fra"></div>
+            </aside>
+        </section><!-- end #sentiment-graph -->
+
+        <section id="players">
+            <h2>Players</h2>
+            <div class="introduction">
+                <p>This section shows the sentiment towards individual players.</p>
+                <ul>
+                    <li>The size of each pie chart is determined by the number of tweets recorded about the player</li>
+                </ul>
+            </div>
+
+            <hr />
+
+            <div id="players-key">
+                <p>Key:</p>
+                <p data-label="motm">Man of the Match</p>
+                <p data-label="worst">Most Negativity</p>
+            </div>
+
+            <div id="players-container"></div>
+        </section><!-- end #man-of-the-match -->
+
+        <section id="word-analysis">
+            <h2>Words</h2>
+            <div class="introduction">
+                <p>This section is an analysis of word usage throughout the match.</p>
+                <ul>
+                    <li>You can select the most popular words used by fans from the select box or pick specific words</li>
+                    <li>Each line represents one word and its usage throughout the match</li>
+                </ul>
+            </div>
+
+            <hr />
+
+            <div id="words-options">
+                <p>
+                    <label for="words-type-select">Graph display:</label>
+                    <select id="words-type-select">
+                        <option value="top-five">Top Five</option>
+                        <option value="specific">Specific Words</option>
+                    </select>
+                </p>
+
+                <form id="specific-words" action="" method="POST">
+                    <input id="specific-words-input" type="text" />
+                    <input type="submit" value="Go!" />
+                </form>
+
+            </div>
+
+            <div id="words"></div>
+        </section><!-- end #word-analysis -->
+
+        <footer>
+            <p>Made by <a href="http://sambowler.com">Sam Bowler</a>. Follow me on <a href="http://twitter.com/sam_bowler">Twitter</a>.</p>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/libs/jquery.min.js"><\/script>')</script>
+        <script src="scripts/libs/modernizr.js"></script>
+        <script src="scripts/libs/jquery.tipTip.min.js"></script>
+        <script src="scripts/libs/underscore.min.js"></script>
+        <script src="scripts/libs/raphael.min.js"></script>
+        <script src="scripts/libs/jquery.masonry.min.js"></script>
+        <script src="scripts/libs/morris.js"></script>
+        <script src="scripts/libs/jquery.autoSuggest.min.js"></script>
+        <script src="scripts/rwclib.min.js"></script>
+        <script src="scripts/opinion.min.js"></script>
+        <script src="scripts/words.min.js"></script>
+        <script src="scripts/players.min.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

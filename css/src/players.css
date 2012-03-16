@@ -1,0 +1,66 @@
+#players-key {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#players-key p {
+    float: left;
+    margin: 0 25px 0 0;
+    padding: 1px 0 0 20px;
+    position: relative;
+}
+
+#players-key p:first-child { 
+    margin-right: 5px; 
+    padding-left: 0;
+}
+
+#players-key p::before {
+    display: block;
+    font-family: 'IconicFill';
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#players-key [data-label="motm"]::before {
+    content: '\e022';
+    color: #EEC900;
+    left: 5px;
+}
+
+#players-key [data-label="worst"]::before {
+    content: '\e016';
+    color: #4D090A;
+}
+
+#players-container .motm::after,
+#players-container .worst::after {
+    display: block;
+    font-family: 'IconicFill';
+    font-size: 50px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 2;
+}
+
+#players-container .motm::after {
+    content: '\e022';
+    color: #EEC900;
+    -webkit-transform: rotate(10deg);
+    -moz-transform:    rotate(10deg);
+    transform:         rotate(10deg);
+    top: 10px;
+    right: 15px;
+}
+
+#players-container .worst::after {
+    content: '\e016';
+    color: #4D090A;
+    font-size: 40px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform:    rotate(-10deg);
+    transform:         rotate(-10deg);
+}
